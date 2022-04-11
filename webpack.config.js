@@ -13,7 +13,7 @@ const cssPlugin = new MiniCssExtractPlugin({
 module.exports = {
   entry: "./src/index.tsx",
   target: "web",
-  mode: "development",
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js",
