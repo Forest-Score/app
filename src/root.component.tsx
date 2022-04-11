@@ -1,7 +1,9 @@
-import React from "react";
+import * as React from "react";
 
-const Root = () => {
-  return <h1>Forest Score</h1>;
+import Layout from "./components/layout.component";
+
+const RootComponent = ({}) => {
+  return <Layout />;
 };
 
-export default Root;
+export default RootComponent;
