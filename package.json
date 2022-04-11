@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm i -g nodemon",
     "build": "webpack build",
     "start": "nodemon src/index.ts",
     "webpack-dev": "webpack serve --config webpack.config.js",
