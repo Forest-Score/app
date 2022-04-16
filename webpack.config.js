@@ -11,15 +11,20 @@ const cssPlugin = new MiniCssExtractPlugin({
 });
 
 module.exports = {
-  entry: "./src/index.tsx",
-  target: "node",
+  entry:
+    process.env.NODE_ENV === "local" ? "./src/index.tsx" : "./src/index.ts",
+  target: process.env.NODE_ENV === "local" ? "web" : "node",
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   output: {
     path: path.resolve(__dirname, "build"),
+    publicPath: "/",
     filename: "bundle.js",
   },
   resolve: {
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+  },
+  devServer: {
+    liveReload: true,
   },
   module: {
     rules: [
