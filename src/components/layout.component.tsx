@@ -4,9 +4,14 @@ import { Box, Container, Paper, Slide, Typography } from "@mui/material";
 import Address from "./address/address.component";
 import Upload from "./upload/upload.component";
 import Question from "./question/question.component";
+import Goals from "./goals/goals.component";
 
 const LayoutComponent = ({}) => {
-  const [active, setActive] = React.useState("address");
+  const [active, setActive] = React.useState("goals");
+
+  const answerQuestion = (val: string, type: string) => {
+    console.log(val, type);
+  };
 
   return (
     <Container component="main" maxWidth="md">
@@ -22,12 +27,30 @@ const LayoutComponent = ({}) => {
         <Box p={2} pt={5} textAlign="center">
           <Slide
             direction="left"
+            in={active === "goals"}
+            mountOnEnter
+            unmountOnExit
+          >
+            <Box>
+              <Question
+                header="Which best describes your motivation?"
+                onSubmit={() => answerQuestion("address", "goals")}
+              >
+                <Goals />
+              </Question>
+            </Box>
+          </Slide>
+          <Slide
+            direction="left"
             in={active === "address"}
             mountOnEnter
             unmountOnExit
           >
             <Box>
-              <Question header="What is your address?">
+              <Question
+                header="What is your address?"
+                onSubmit={() => answerQuestion("address", "address")}
+              >
                 <Address onSubmit={() => setActive("upload")} />
               </Question>
             </Box>
