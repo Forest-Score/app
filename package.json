@@ -7,7 +7,7 @@
     "postinstall": "npm i -g ts-node nodemon",
     "build": "webpack build",
     "start": "nodemon src/index.ts",
-    "webpack-dev": "NODE_ENV=local webpack serve --config webpack.config.js",
+    "dev-server": "NODE_ENV=local webpack serve --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

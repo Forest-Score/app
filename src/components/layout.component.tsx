@@ -3,6 +3,7 @@ import { Box, Container, Paper, Slide, Typography } from "@mui/material";
 
 import Address from "./address/address.component";
 import Upload from "./upload/upload.component";
+import Question from "./question/question.component";
 
 const LayoutComponent = ({}) => {
   const [active, setActive] = React.useState("address");
@@ -10,7 +11,12 @@ const LayoutComponent = ({}) => {
   return (
     <Container component="main" maxWidth="md">
       <Typography variant="h2" component="h1" textAlign="center" mb={2}>
-        Forest Score
+        <a
+          href="https://forestscore.com"
+          style={{ color: "#666", fontWeight: 700, textDecoration: "none" }}
+        >
+          Forest Score
+        </a>
       </Typography>
       <Paper elevation={3} sx={{ height: "calc(100vw - 120px)" }}>
         <Box p={2} pt={5} textAlign="center">
@@ -21,7 +27,9 @@ const LayoutComponent = ({}) => {
             unmountOnExit
           >
             <Box>
-              <Address onSubmit={() => setActive("upload")} />
+              <Question header="What is your address?">
+                <Address onSubmit={() => setActive("upload")} />
+              </Question>
             </Box>
           </Slide>
           <Slide
