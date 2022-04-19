@@ -13,7 +13,7 @@ const Question = (props: QuestionProps) => {
   const { children, disabled, header, isLast, onSubmit } = props;
   return (
     <Box>
-      <Typography component="h3" variant="h5" gutterBottom>
+      <Typography component="h3" variant="h5" gutterBottom align="center">
         {header}
       </Typography>
       <Box mb={2}>{children}</Box>

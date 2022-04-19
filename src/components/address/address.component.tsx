@@ -1,4 +1,4 @@
-import { Button, FormControl, InputLabel, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import * as React from "react";
 
 interface AddressProps {
@@ -10,18 +10,12 @@ const Address = (props: AddressProps) => {
   const { onSubmit } = props;
 
   return (
-    <FormControl>
-      <InputLabel htmlFor="address-input">Search for Address</InputLabel>
-      <TextField
-        id="address-input"
-        onChange={(e) => setAddress(e.target.value)}
-        value={address}
-        variant="filled"
-      />
-      <Button variant="contained" onClick={onSubmit}>
-        Find Property
-      </Button>
-    </FormControl>
+    <TextField
+      id="address-input"
+      onChange={(e) => setAddress(e.target.value)}
+      value={address}
+      variant="filled"
+    />
   );
 };
 
