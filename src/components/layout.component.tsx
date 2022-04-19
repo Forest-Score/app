@@ -48,7 +48,7 @@ const LayoutComponent = ({}) => {
       <Paper
         elevation={0}
         sx={{
-          maxWidth: "600px",
+          maxWidth: "700px",
           margin: "0 auto",
           overflow: "hidden",
         }}
@@ -99,10 +99,14 @@ const LayoutComponent = ({}) => {
               <Question
                 header="Do you have drone footage to upload?"
                 onSubmit={() => answerQuestion("upload", "results")}
+                isLast
               >
                 <Upload onSubmit={() => alert("upload")} />
               </Question>
             </Box>
+          </Slide>
+          <Slide in={active === "results"} mountOnEnter unmountOnExit>
+            <div>The Results</div>
           </Slide>
         </Box>
       </Paper>

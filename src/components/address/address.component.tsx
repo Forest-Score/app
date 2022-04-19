@@ -15,6 +15,7 @@ const Address = (props: AddressProps) => {
       onChange={(e) => setAddress(e.target.value)}
       value={address}
       variant="filled"
+      fullWidth
     />
   );
 };
