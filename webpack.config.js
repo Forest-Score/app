@@ -11,10 +11,9 @@ const cssPlugin = new MiniCssExtractPlugin({
 });
 
 module.exports = {
-  entry:
-    process.env.NODE_ENV === "local" ? "./src/index.tsx" : "./src/index.ts",
-  target: process.env.NODE_ENV === "local" ? "web" : "node",
-  mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  entry: "./src/index.tsx",
+  target: "web",
+  mode: process.env.NODE_ENV === "local" ? "development" : "production",
   output: {
     path: path.resolve(__dirname, "build"),
     publicPath: "/",
